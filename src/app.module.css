@@ -1,0 +1,67 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  font-size: 1.6rem;
+  background-color: red;
+}
+
+.navbar{
+  height:5rem;
+  background-color: #3f3f3f;
+  display: flex;
+  border-bottom: 2px solid  #ffdf6c;
+}
+
+.content{
+  display:flex;
+  flex-direction:row;
+  width:100%;
+  height:100%;
+}
+
+.papersList{
+  width: 15rem;
+  background-color: #3f3f3f;
+  display: flex;
+  border-right: 2px solid  #ffdf6c;
+}
+
+
+.paper{
+  width:100%;
+  background-color: #707070;
+}
+
+@media screen and (max-width: 800px) {
+
+  .content{
+    width:100vw;
+  }
+  .navbar{
+    display:flex;
+    flex-direction:column;
+    justify-content: center;
+    height: 12rem;
+  }
+
+  .papersList.mode1{
+    display:none;
+  }
+
+  .paper.mode1{
+    width:100vw;
+  }
+
+  .papersList.mode2{
+    width:100vw;
+    border-right: none;
+  }
+
+  .paper.mode2{
+    display: none
+  }
+
+
+}

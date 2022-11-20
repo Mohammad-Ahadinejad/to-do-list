@@ -1,25 +1,39 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import Paper from "./components/paper/Paper"
+import Navbar from "./components/navbar/Navbar"
+import TasksProvider from "./components/provider/TasksProvider";
+import styles from "./app.module.css"
+import moment from 'moment';
+import PapersList from "./components/papersList/PapersList";
+import {useTasks} from './components/provider/TasksProvider';
 
-function App() {
+const App = () => {
+  const [showPaper, setShowPaper] = useState(false);
+  const [date, setDate] = useState(moment().format('YYYY-MM-DD'));
+  const [mode, setMode] = useState(true);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+
+      <TasksProvider>
+        <div className={styles.container}>
+          <div className={styles.navbar}>
+            <Navbar showPaper={showPaper} 
+                    setShowPaper = {setShowPaper} 
+                    date={date}
+                    mode={mode}
+                    setMode={setMode} />
+          </div>
+          <div className={styles.content}>
+            <div className={`${styles.papersList} ${mode? styles.mode1:styles.mode2}`}>
+              <PapersList setShowPaper = {setShowPaper} setDate={setDate} mode={mode} setMode={setMode}/>
+            </div>
+            <div className={`${styles.paper} ${mode? styles.mode1:styles.mode2}`}>
+              {showPaper && <Paper  date={date} setDate={setDate}/>}
+            </div>
+          </div>
+        </div>
+      </TasksProvider >     
+    
   );
-}
+};
 
 export default App;

@@ -1,0 +1,65 @@
+.navbar{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.btn{
+    cursor: pointer;
+    outline: 0;
+    border: 0;
+    padding: 0.5rem 0.75rem;
+    border-radius: 8px;
+    margin: 0 1rem;
+    text-align: center;
+    white-space: nowrap;
+    font-size: 1.2rem;
+}
+
+.btnPrimary{
+    background-color: #ffdf6c;
+    border: 2px solid #ffdf6c;
+    color:black;
+}
+
+.btnSecondary{
+    background-color: #3f3f3f;
+    color: white;
+    border: 2px solid #ffdf6c;
+}
+
+.btn:hover{
+    border: 2px solid tomato;
+    transition: border 0.5s ease;
+}
+
+.btnMenu{
+    display:none;
+    position: absolute;
+    left:5px;
+    top:5px;
+    width:40px;
+    height:40px;
+    color: #ffdf6c;
+}
+.btnMenu:hover{
+    color: tomato;
+    transition: color 0.5s ease;
+}
+@media screen and (max-width: 800px) {
+    .navbar{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .btn{
+        margin-bottom: 0.5rem;
+    }
+
+    .btnMenu{
+        display: inline;
+    }
+}

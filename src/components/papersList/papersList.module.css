@@ -1,0 +1,30 @@
+.list{
+    width: 100%;
+    padding: 1rem;
+}
+.paper{
+    margin-bottom: 1.5rem;
+    color:White;
+    font-size: 1.4rem;
+    display:flex;
+    flex-direction:row;
+    justify-content:space-between;
+    align-items:center;
+    cursor: pointer;
+
+}
+.date:hover{
+    border-bottom: 2px solid #ffdf6c;  
+}
+
+.trash:hover{
+    color:tomato;
+    transition: color 0.5s ease;
+}
+
+@media screen and (max-width: 800px) {
+    .paper{
+        max-width:90vw;
+    }
+
+}
